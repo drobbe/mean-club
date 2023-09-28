@@ -1,0 +1,166 @@
+:host {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 8px 0;
+}
+
+p {
+  margin: 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.toolbar {
+  // position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #3797a4;
+  color: white;
+  font-weight: 600;
+
+  .title {
+    padding-left: 20px;
+  }
+}
+
+.content {
+  display: flex;
+  margin: 82px auto 32px;
+  padding: 0 16px;
+  // max-width: 960px;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+
+  h1 {
+    color: #16a596;
+  }
+
+  .blockquote-wrapper {
+    display: inline-block;
+    font-family: sans-serif;
+    margin: 3em;
+    max-width: 24em;
+    .blockquote {
+      display: inline-block;
+      margin: 0;
+      padding: 1em;
+      position: relative;
+      &:before {
+        color: #f90;
+        content: "\201C";
+        font-size: 4em;
+        left: 0;
+        line-height: 0.75em;
+        position: absolute;
+        top: 0;
+        transform: scale(2, 8);
+        transform-origin: top;
+      }
+      &:after {
+        color: #f90;
+        content: "\201D";
+        font-size: 4em;
+        line-height: 0.75em;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: scale(2, 8);
+        transform-origin: top;
+      }
+      > * {
+        padding: 2em 2em;
+        color: #373a40;
+      }
+    }
+  }
+
+  svg#clouds {
+    position: fixed;
+    bottom: -160px;
+    left: -230px;
+    z-index: -10;
+    width: 1920px;
+  }
+
+  .loader {
+    width: 48px;
+    height: 48px;
+    border: 3px solid gray;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-bottom-color: #16a596;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+#followed-clubs-legend {
+  font-size: 0.75em;
+  display: block;
+  font-weight: 700;
+}
+
+alert {
+  min-width: 20rem;
+  position: fixed;
+  top: 4rem;
+  z-index: 2;
+}
+
+// CAMBIANDO COLOR DE BOOTRAP PARA QUE SE PAREZCA A INICIAL DE LA PLANTILLA
+.btn-primary {
+  background-color: #16a596 !important;
+  border-color: rgb(35, 138, 127) !important;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    background-color: #158176 !important;
+    border-color: #0f6159 !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+}
